@@ -26,10 +26,15 @@ $(document).ready(function(){
   });
 
   $('nav a').on('click', function(e) {
+    e.preventDefault();
     var currentAttrValue = $(this).attr('href').split('#')[1];
-    $.fn.moveTo(currentAttrValue)
+    $.fn.moveTo(currentAttrValue);
     // Change/remove current tab to active
     $(this).parent('li').addClass('active').siblings().removeClass('active');
-    e.preventDefault();
+  });
+
+  $('.logo-link').on('click', function(event) {
+      event.preventDefault();
+      $('nav a[href="#1"]').click();
   });
 });
