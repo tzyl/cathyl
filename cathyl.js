@@ -17,7 +17,7 @@ $(document).ready(function(){
       $('nav a[href="#' + index + '"]').parent('li').addClass('active').siblings().removeClass('active');
      },  // This option accepts a callback function. The function will be called before the page moves.
      afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
-     loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
+     loop: false,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
      keyboard: true,                  // You can activate the keyboard controls
      responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
                                       // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
@@ -37,4 +37,6 @@ $(document).ready(function(){
       event.preventDefault();
       $('nav a[href="#1"]').click();
   });
+
+  $('#about-text-container').children("h2:first").css('margin-top', 0)
 });

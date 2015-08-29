@@ -96,6 +96,10 @@ nav li a:hover, nav .active a {
   background-image: url("images/carousel-4.jpg");
 }
 
+.carousel-5 {
+  background-image: url("images/carousel-5.jpg");
+}
+
 .carousel .slick-next, .slick-prev {
   z-index: 1;
 }
@@ -113,4 +117,33 @@ nav li a:hover, nav .active a {
   font-weight: 400;
   font-size: 3vh;
   line-height: 1.5em;
+}
+
+#profile-picture-container {
+  position: absolute;
+  display: inline-block;
+  top: 10%;
+  left: 10%;
+  width: 30%;
+}
+
+
+#profile-picture-container img {
+  width: 100%;
+}
+
+#about-text-container {
+  position: absolute;
+  display: inline-block;
+  top: 10%;
+  left: 45%;
+  width: 45%;
+}
+
+#about-text-container h2 {
+  font-size: 4vh;
+}
+
+#about-text-container p {
+  font-size: 2vh;
 }
