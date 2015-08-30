@@ -33,11 +33,6 @@ $(document).ready(function(){
     $(this).parent('li').addClass('active').siblings().removeClass('active');
   });
 
-  $('.logo-link').on('click', function(event) {
-      event.preventDefault();
-      $('nav a[href="#1"]').click();
-  });
-
   $('#about-text-container').children("h2:first").css('margin-top', 0)
   $('#classes-text-container').children("h2:first").css('margin-top', 0)
 });
