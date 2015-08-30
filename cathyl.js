@@ -39,4 +39,5 @@ $(document).ready(function(){
   });
 
   $('#about-text-container').children("h2:first").css('margin-top', 0)
+  $('#classes-text-container').children("h2:first").css('margin-top', 0)
 });
