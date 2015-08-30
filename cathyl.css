@@ -111,10 +111,17 @@ nav li a:hover, nav .active a {
 }
 
 .caption {
+  height: 20%;
+  width: 100%;
   text-align: center;
+}
+
+.caption h1 {
   font-weight: 400;
+  text-transform: uppercase;
   font-size: 3vmin;
   line-height: 1.5em;
+  margin-top: 6vh;
 }
 
 #profile-picture-container, #classes-picture-container, #contact-picture-container {
