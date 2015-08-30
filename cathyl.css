@@ -113,7 +113,7 @@ nav li a:hover, nav .active a {
 .caption {
   text-align: center;
   font-weight: 400;
-  font-size: 3vh;
+  font-size: 3vmin;
   line-height: 1.5em;
 }
 
@@ -121,7 +121,7 @@ nav li a:hover, nav .active a {
   position: absolute;
   display: inline-block;
   top: 10%;
-  left: 10%;
+  left: 5%;
   width: 30%;
 }
 
@@ -134,30 +134,30 @@ nav li a:hover, nav .active a {
   position: absolute;
   display: inline-block;
   top: 10%;
-  left: 45%;
-  width: 45%;
+  left: 40%;
+  width: 55%;
 }
 
 #about-text-container h2, #classes-text-container h2 {
-  font-size: 4vh;
+  font-size: 4vmin;
 }
 
 #about-text-container p, #classes-text-container p {
-  font-size: 2vh;
+  font-size: 2vmin;
 }
 
 .classes-table th, .classes-table td {
-  font-size: 2vh;
+  font-size: 2vmin;
   text-align: left;
   vertical-align: top;
   padding: 5px;
 }
 
 .contact-table {
-  font-size: 3vh;
+  font-size: 3vmin;
   position: absolute;
   top: 20%;
-  left: 45%;
+  left: 40%;
   width: 55%;
 }
 
