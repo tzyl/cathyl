@@ -1,15 +1,16 @@
 var transparent = true
+var map;
 
 $(document).ready(function(){
-    $('body').scrollspy({target: ".navbar", offset: 50});
+    $('body').scrollspy({target: ".navbar", offset: 70});
 
     $('nav a').on('click', function(e) {
         e.preventDefault();
         var hash = this.hash;
 
-        $('html, body').animate(
-            {scrollTop: $(hash).offset().top}, 800
-            );
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top - 50
+        }, 1000, 'easeInOutCubic');
 
         /*
         e.preventDefault();
@@ -70,3 +71,15 @@ $(window).on('scroll', function(){
         }
     }
 });
+
+function initMap() {
+    var myLatLng = new google.maps.LatLng(51.50735, -0.12776);
+    var mapOptions = {
+        center: myLatLng,
+        zoom: 12,
+        scrollwheel: false
+    };
+
+    map = new google.maps.Map(document.getElementById('contact-us-map'), mapOptions);
+}
+
