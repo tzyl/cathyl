@@ -110,13 +110,17 @@ body {
 
 /* ANIMATIONS */
 .add-animation {
+    animation-name: slideOut;
+    -webkit-animation-name: slideOut;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
     opacity: 0;
 }
 
 .add-animation.animated {
     /* The name of the animation */
-    animation-name: slide;
-    -webkit-animation-name: slide;
+    animation-name: slideIn;
+    -webkit-animation-name: slideIn;
     /* The duration of the animation */
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
@@ -125,7 +129,7 @@ body {
 }
 
 /* Go from 0% to 100% opacity (see-through) and specify the percentage from when to slide in the element along the Y-axis */
-@keyframes slide {
+@keyframes slideIn {
     0% {
         opacity: 0;
         -webkit-transform: translateY(70%);
@@ -135,7 +139,7 @@ body {
         -webkit-transform: translateY(0%);
     }
 }
-@-webkit-keyframes slide {
+@-webkit-keyframes slideIn {
     0% {
         opacity: 0;
         -webkit-transform: translateY(70%);
@@ -143,6 +147,27 @@ body {
     100% {
         opacity: 1;
         -webkit-transform: translateY(0%);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    }
+}
+@-webkit-keyframes slideOut {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
     }
 }
 /* END ANIMATIONS */

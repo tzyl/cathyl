@@ -14,13 +14,15 @@ $(document).ready(function() {
             scrollTop: $(hash).offset().top - 50
         }, 1000, 'easeInOutCubic');
     });
-
-    // Initialize animations.
-    animations.initAnimations()
 });
 
 $(window).on('scroll', function() {
     animations.checkNavbarAnimation();
+});
+
+$(window).load(function() {
+    // Initialize animations.
+    animations.initAnimationWaypoints()
 });
 
 function initMap() {
@@ -35,7 +37,7 @@ function initMap() {
 }
 
 animations = {
-    initAnimations: function() {
+    initAnimationWaypoints: function() {
         $(".add-animation").each(function() {
             var waypoints = $(this).waypoint(function(direction) {
                 if(direction == 'down'){
@@ -44,7 +46,9 @@ animations = {
                        $(this.element).removeClass('animated');
                    }
                 }, {
-                  offset: '90%'
+                  offset: function () {
+                    return Waypoint.viewportHeight() - 50
+                  }
            });
         });
     },
