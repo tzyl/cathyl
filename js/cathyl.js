@@ -42,13 +42,13 @@ animations = {
             var waypoints = $(this).waypoint(function(direction) {
                 if(direction == 'down'){
                         $(this.element).addClass('animated');
-                   } else {
-                       $(this.element).removeClass('animated');
-                   }
+                    } else {
+                        $(this.element).removeClass('animated');
+                    }
                 }, {
-                  offset: function () {
-                    return Waypoint.viewportHeight() - 50
-                  }
+                    offset: function () {
+                        return Waypoint.viewportHeight() - 50
+                    }
            });
         });
     },
