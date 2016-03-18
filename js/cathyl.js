@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('body').scrollspy({target: ".navbar", offset: 70});
 
     // Smooth scrolling when navbar link clicked.
-    $('nav a').on('click', function(e) {
+    $('nav a, a.scroll-arrow').on('click', function(e) {
         e.preventDefault();
         var hash = this.hash;
 
@@ -40,10 +40,11 @@ animations = {
     initAnimationWaypoints: function() {
         $(".add-animation").each(function() {
             var waypoints = $(this).waypoint(function(direction) {
+                // console.log(this.element.id + ' triggers at ' + this.triggerPoint);
                 if(direction == 'down'){
-                        $(this.element).addClass('animated');
+                        $(this.element).removeClass('slide-out').addClass('slide-in');
                     } else {
-                        $(this.element).removeClass('animated');
+                        $(this.element).removeClass('slide-in').addClass('slide-out');
                     }
                 }, {
                     offset: function () {

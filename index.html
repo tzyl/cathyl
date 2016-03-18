@@ -10,12 +10,13 @@
 
         <title>Cathyl L Yoga</title>
 
-        <!-- Latest compiled and minified CSS -->
+        <!-- CDN CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="css/cathyl.css">
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,7 +51,11 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <div class="cover" id="section1"></div>
+        <div class="cover" id="section1">
+            <a href="#section2" class="scroll-arrow hidden-xs hidden-sm">
+                <i class="fa fa-angle-down"></i>
+            </a>
+        </div>
 
         <div class="container one-page" id="section2">
             <h1>About</h1>
@@ -85,17 +90,18 @@
         <!-- jQuery local fallback -->
         <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
-        <!-- Latest compiled and minified JavaScript -->
+        <!-- Bootstrap CDN JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <!-- Bootstrap JS local fallback -->
         <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="js/bootstrap.min.js"><\/script>')}</script>
-
         <!-- Bootstrap CSS local fallback -->
         <script>
             $(document).ready(function() {
-            var bodyColor = $('body').css('color');
-            if(bodyColor != 'rgb(51, 51, 51)') {
-            $("head").prepend('<link rel="stylesheet" href="/local/bootstrap.min.css">');}});
+                var bodyColor = $('body').css('color');
+                if(bodyColor != 'rgb(51, 51, 51)') {
+                    $("head").prepend('<link rel="stylesheet" href="/local/bootstrap.min.css">');
+                }
+            });
         </script>
 
         <!-- Plugins -->
