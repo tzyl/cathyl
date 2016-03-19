@@ -19,8 +19,9 @@ $(document).ready(function() {
     var feed = new Instafeed({
         clientId: '97ae5f4c024c4a91804f959f43f2635f',
         target: 'instafeed',
-        get: 'tagged',
-        tagName: 'photographyportfolio',
+        get: 'user',
+        userId: '191438231',
+        //tagName: 'photographyportfolio',
         links: true,
         limit: 8,
         sortBy: 'most-recent',
