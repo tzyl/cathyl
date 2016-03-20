@@ -13,6 +13,9 @@ $(document).ready(function() {
         $('html, body').animate({scrollTop: $(hash).offset().top}, 1000);
     });
 
+    // Initialize animations so they can start on elements before page fully loaded.
+    animations.initAnimationWaypoints()
+
     // Set up instafeed.
     var feed = new Instafeed({
         //clientId: '97ae5f4c024c4a91804f959f43f2635f',
@@ -36,7 +39,7 @@ $(window).on('scroll', function() {
 });
 
 $(window).load(function() {
-    // Initialize animations.
+    // Reinitialize waypoints for elements which did not load yet.
     animations.initAnimationWaypoints()
 });
 
