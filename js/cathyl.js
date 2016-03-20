@@ -25,7 +25,7 @@ $(document).ready(function() {
         limit: 8,
         sortBy: 'most-recent',
         resolution: 'standard_resolution',
-        template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 add-animation"><a href="{{link}}" target="_blank"><div class="photo-box"><div class="image-wrap"><img src="{{image}}"><div class="likes">{{likes}} Likes</div></div><div class="description">{{caption}}<div class="date">{{model.created_time}}</div></div></div></a></div>',
+        template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 add-animation"><a href="{{link}}" target="_blank"><div class="photo-box"><div class="image-wrap"><img src="{{image}}"></div><div class="description"><div class="caption">{{caption}}</div><span class="date">{{model.created_time}}</span><div class="likes-comments-container"><span class="likes"><span class="glyphicon glyphicon-heart"></span>&nbsp;{{likes}}</span><span class="comments"><span class="glyphicon glyphicon-comment"></span>&nbsp;{{comments}}</span></div></div></div></a></div>',
         after: convertDates
     });
     feed.run();

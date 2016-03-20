@@ -131,15 +131,6 @@ a.scroll-arrow:hover {
     width: 100%;
 }
 
-.instagram-content .photo-box .image-wrap .likes {
-    position: absolute;
-    bottom: 5px;
-    left: 15px;
-    padding: 5px;
-    background: black;
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-}
 .instagram-content .photo-box .description {
     font-family: "Montserrat", sans-serif;
     font-size: 12px;
@@ -147,10 +138,22 @@ a.scroll-arrow:hover {
     color: #9b9b9b;
     letter-spacing: 1px;
     padding: 15px;
-    height: 75px;
+    height: 65px;
+}
+
+.instagram-content .photo-box .description .caption {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    padding-bottom: 4px;
+}
+
+.instagram-content .photo-box .description .likes-comments-container {
+    float: right;
+}
+
+.instagram-content .photo-box .description .likes {
+    margin-right: 5px;
 }
 /* END INSTAGRAM CONTAINER */
 
