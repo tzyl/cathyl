@@ -1,6 +1,3 @@
-var transparent = true;
-var map;
-
 $(document).ready(function() {
     // Initialize scrollspy for navbar.
     $('body').scrollspy({target: ".navbar", offset: 70});
@@ -45,6 +42,7 @@ $(window).load(function() {
 
 // Initialize Google Map.
 function initMap() {
+    var map;
     var myLatLng = new google.maps.LatLng(51.50735, -0.12776);
     var mapOptions = {
         center: myLatLng,
@@ -64,6 +62,8 @@ function convertDates() {
 }
 
 animations = {
+    transparent: true,
+
     initAnimationWaypoints: function() {
         $(".add-animation").each(function() {
             var waypoints = $(this).waypoint(function(direction) {
@@ -83,13 +83,13 @@ animations = {
 
     checkNavbarAnimation: debounce(function() {
         if ($(document).scrollTop() > 560) {
-            if (transparent) {
-                transparent = false;
+            if (animations.transparent) {
+                animations.transparent = false;
                 $('.navbar').removeClass('navbar-transparent');
                 }
         } else {
-            if (!transparent) {
-                transparent = true;
+            if (!animations.transparent) {
+                animations.transparent = true;
                 $('.navbar').addClass('navbar-transparent');
             }
         }
