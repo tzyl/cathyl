@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Initialize scrollspy for navbar.
-    $('body').scrollspy({target: ".navbar", offset: 70});
+    $('body').scrollspy({target: '.navbar', offset: 70});
 
     // Smooth scrolling when navbar link clicked.
     $('nav a, a.scroll-arrow').on('click', function(e) {
@@ -9,6 +9,9 @@ $(document).ready(function() {
 
         $('html, body').animate({scrollTop: $(hash).offset().top}, 1000);
     });
+
+    // Initialize parallax for cover page.
+    $('.cover').parallax({imageSrc: 'images/aaa.jpg'});
 
     // Initialize animations so they can start on elements before page fully loaded.
     animations.initAnimationWaypoints()
@@ -32,7 +35,7 @@ $(document).ready(function() {
 });
 
 $(window).on('scroll', function() {
-    animations.checkNavbarAnimation();
+    //animations.checkNavbarAnimation();
 });
 
 $(window).load(function() {
@@ -55,7 +58,7 @@ function initMap() {
 
 // Converts the date timestamps from instafeed to human readable dates.
 function convertDates() {
-    $(".date").each(function() {
+    $('.date').each(function() {
         var d = new Date($(this).html() * 1000);
         $(this).html(d.toDateString());
     });
@@ -65,19 +68,35 @@ animations = {
     transparent: true,
 
     initAnimationWaypoints: function() {
-        $(".add-animation").each(function() {
+        $('.add-animation').each(function() {
             var waypoints = $(this).waypoint(function(direction) {
                 // console.log(this.element.id + ' triggers at ' + this.triggerPoint);
-                if(direction == 'down'){
-                        $(this.element).removeClass('slide-out').addClass('slide-in');
-                    } else {
-                        $(this.element).removeClass('slide-in').addClass('slide-out');
-                    }
-                }, {
-                    offset: function () {
-                        return Waypoint.viewportHeight() - 50
-                    }
-           });
+                if (direction == 'down') {
+                    $(this.element).removeClass('slide-out').addClass('slide-in');
+                } else {
+                    $(this.element).removeClass('slide-in').addClass('slide-out');
+                }
+            }, {
+                offset: function() {
+                    return Waypoint.viewportHeight() - 50
+                }
+            });
+        });
+
+        // Navbar animation.
+        var waypoint = new Waypoint({
+            element: document.getElementById('section1'),
+            handler: function(direction) {
+                //console.log(this.element.id + ' triggers at ' + this.triggerPoint);
+                if (direction == 'down') {
+                    $('.navbar').removeClass('navbar-transparent');
+                } else {
+                    $('.navbar').addClass('navbar-transparent');
+                }
+            },
+            offset: function() {
+                return 200 - this.element.clientHeight
+            }
         });
     },
 
