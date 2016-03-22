@@ -43,9 +43,25 @@ $(window).load(function() {
     animations.initAnimationWaypoints()
 });
 
+// Converts the date timestamps from instafeed to human readable dates.
+function convertDates() {
+    $('.date').each(function() {
+        var d = new Date($(this).html() * 1000);
+        $(this).html(d.toDateString());
+    });
+}
+
+/* GOOGLE MAPS */
+var map;
+var markers = [];
+var locations = [
+    ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}],
+    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}],
+    ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}]
+];
+
 // Initialize Google Map.
 function initMap() {
-    var map;
     var myLatLng = new google.maps.LatLng(51.50735, -0.12776);
     var mapOptions = {
         center: myLatLng,
@@ -56,13 +72,31 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('contact-us-map'), mapOptions);
 }
 
-// Converts the date timestamps from instafeed to human readable dates.
-function convertDates() {
-    $('.date').each(function() {
-        var d = new Date($(this).html() * 1000);
-        $(this).html(d.toDateString());
-    });
+function drop() {
+    clearMarkers();
+    for (var i = 0; i < locations.length; i++) {
+        addMarkerWithTimeout(locations[i][0], locations[i][1], i * 200);
+    }
+};
+
+function addMarkerWithTimeout(title, position, timeout) {
+    window.setTimeout(function() {
+        markers.push(new google.maps.Marker({
+            title: title,
+            position: position,
+            animation: google.maps.Animation.DROP,
+            map: map
+        }));
+    }, timeout)
+};
+
+function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(null)
+    }
+    markers = [];
 }
+/* END GOOGLE MAPS */
 
 animations = {
     transparent: true,
@@ -96,6 +130,20 @@ animations = {
             },
             offset: function() {
                 return 200 - this.element.clientHeight
+            }
+        });
+
+        // Map marker initialization animation.
+        var waypoint = new Waypoint({
+            element: document.getElementById('contact-us-map'),
+            handler: function(direction) {
+                //console.log(this.element.id + ' triggers at ' + this.triggerPoint);
+                if (direction == 'down') {
+                    drop();
+                }
+            },
+            offset: function() {
+                return Waypoint.viewportHeight() - 50
             }
         });
     },
