@@ -39,7 +39,7 @@ body {
 .navbar-transparent {
     padding: 5px 0;
     border-bottom: 1px solid transparent;
-    background-color: black;
+    background-color: transparent;
     font-size: 15px;
     /*
     padding-top: 15px;
@@ -56,7 +56,7 @@ body {
     height: 60px;
     z-index: -1;
     content: "";
-    opacity: 1;
+    opacity: 0.9;
     background: #000;
     background: url("../images/pattern.png");
 }

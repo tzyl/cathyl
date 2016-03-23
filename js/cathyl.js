@@ -40,7 +40,8 @@ $(window).on('scroll', function() {
 
 $(window).load(function() {
     // Reinitialize waypoints for elements which did not load yet.
-    animations.initAnimationWaypoints()
+    Waypoint.destroyAll();
+    animations.initAnimationWaypoints();
 });
 
 // Converts the date timestamps from instafeed to human readable dates.
@@ -54,17 +55,18 @@ function convertDates() {
 /* GOOGLE MAPS */
 var map;
 var markers = [];
+var infoWindows = [];
 var locations = [
-    ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}],
-    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}],
-    ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}]
+    ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}, 'Tuesday 18:30 - 19:30 (advanced)'],
+    ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}, 'Wednesday 19:00 - 19:45 (all levels)'],
+    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}, 'Thursday 18:45 - 19:45 (all levels)']
 ];
 
 // Initialize Google Map.
 function initMap() {
-    var myLatLng = new google.maps.LatLng(51.50735, -0.12776);
+    var london = new google.maps.LatLng(51.50735, -0.12776);
     var mapOptions = {
-        center: myLatLng,
+        center: london,
         zoom: 12,
         scrollwheel: false
     };
@@ -75,26 +77,36 @@ function initMap() {
 function drop() {
     clearMarkers();
     for (var i = 0; i < locations.length; i++) {
-        addMarkerWithTimeout(locations[i][0], locations[i][1], i * 200);
+        addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], i * 200);
     }
 };
 
-function addMarkerWithTimeout(title, position, timeout) {
+function addMarkerWithTimeout(title, position, content, timeout) {
     window.setTimeout(function() {
-        markers.push(new google.maps.Marker({
+        var marker = new google.maps.Marker({
             title: title,
             position: position,
             animation: google.maps.Animation.DROP,
-            map: map
-        }));
+        });
+
+        var infoWindow = new google.maps.InfoWindow({
+            content: content
+        });
+
+        marker.setMap(map);
+        infoWindow.open(map, marker);
+        markers.push(marker);
+        infoWindows.push(infoWindow);
     }, timeout)
 };
 
 function clearMarkers() {
     for (var i = 0; i < markers.length; i++) {
-        markers[i].setMap(null)
+        markers[i].setMap(null);
+        infoWindows[i].close();
     }
     markers = [];
+    infoWindows = [];
 }
 /* END GOOGLE MAPS */
 
