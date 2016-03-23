@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('body').scrollspy({target: '.navbar', offset: 70});
 
     // Smooth scrolling when navbar link clicked.
-    $('nav a, a.scroll-arrow').on('click', function(e) {
+    $('.nav.navbar-nav.navbar-right a, a.scroll-arrow').on('click', function(e) {
         e.preventDefault();
         var hash = this.hash;
 
