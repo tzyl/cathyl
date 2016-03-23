@@ -11,7 +11,7 @@ $(document).ready(function() {
     });
 
     // Initialize parallax for cover page.
-    $('.cover').parallax({imageSrc: 'images/aaa.jpg'});
+    $('.cover').parallax({imageSrc: 'images/carousel-3.jpg'});
 
     // Initialize animations so they can start on elements before page fully loaded.
     animations.initAnimationWaypoints()

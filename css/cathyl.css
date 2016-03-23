@@ -13,10 +13,19 @@ body {
     transition: all linear 300ms;
 }
 
+.navbar-default .navbar-brand,
 .navbar-default .navbar-nav > li >  a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:focus {
     color: black;
+    background-color: inherit;
+}
+
+.navbar-default.navbar-transparent .navbar-brand,
+.navbar-default.navbar-transparent .navbar-nav > li >  a,
+.navbar-default.navbar-transparent .navbar-nav > .active > a:focus,
+.navbar-default.navbar-transparent .navbar-nav > .active > a:focus {
+    color: white;
     background-color: inherit;
 }
 
@@ -28,13 +37,28 @@ body {
 }
 
 .navbar-transparent {
+    padding: 5px 0;
+    border-bottom: 1px solid transparent;
+    background-color: black;
+    font-size: 15px;
+    /*
     padding-top: 15px;
     border-bottom: 1px solid transparent;
     background-color: transparent;
+    */
 }
 
-.navbar-default .navbar-nav > li >  a {
-    color: #5e5e5e;
+.navbar-transparent:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 60px;
+    z-index: -1;
+    content: "";
+    opacity: 1;
+    background: #000;
+    background: url("../images/pattern.png");
 }
 /* END NAVBAR */
 
@@ -63,7 +87,7 @@ body {
     height: 100%;
     z-index: 1;
     content: "";
-    opacity: .2;
+    opacity: .4;
     background: #000;
     background: url("../images/pattern.png");
 }
@@ -75,7 +99,7 @@ a.scroll-arrow {
     line-height: 52px;
     border-radius: 50%;
     height: 50px;
-    border: 1px solid white;
+    border: 2px solid white;
     display: block;
     margin: 0 auto;
     position: absolute;
