@@ -10,7 +10,12 @@ body {
     font-weight: normal;
     letter-spacing: 2px;
     text-transform: uppercase;
-    transition: all linear 300ms;
+}
+
+.navbar,
+.navbar-default .navbar-brand,
+.navbar-default .navbar-social {
+    transition:  padding 300ms linear, font-size 300ms linear, background-color 300ms linear, border linear 300ms;
 }
 
 .navbar-default .navbar-brand,
@@ -59,6 +64,28 @@ body {
     opacity: 0.9;
     background: #000;
     background: url("../images/pattern.png");
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-social {
+    font-size: 17px;
+}
+
+.navbar-default.navbar-transparent .navbar-brand,
+.navbar-default.navbar-transparent .navbar-social {
+    font-size: 20px;
+}
+
+.navbar-social {
+    margin: 0;
+}
+
+.navbar-social > li {
+    float: left;
+}
+
+.navbar-social > li > a {
+    padding: 15px;
 }
 /* END NAVBAR */
 
