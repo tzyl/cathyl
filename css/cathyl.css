@@ -156,6 +156,11 @@ a.scroll-arrow:hover {
 }
 /* END COVER PAGE */
 
+.title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
 /* INSTAGRAM CONTAINER */
 .instagram-wrap {
     /*background-color: #eeeeee;*/
@@ -219,28 +224,6 @@ a.scroll-arrow:hover {
     margin-right: 5px;
 }
 /* END INSTAGRAM CONTAINER */
-
-/*
-#section1, #section2, #section3, #section4 {
-    padding-top: 50px;
-}
-
-#section1 {
-    background-color: #1E88E5;
-}
-
-#section2 {
-    background-color: #673ab7;
-}
-
-#section3 {
-    background-color: #ff9800;
-}
-
-#section4 {
-    background-color: #00bcd4;
-}
-*/
 
 #contact-us-map {
     height: 500px;

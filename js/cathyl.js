@@ -29,7 +29,7 @@ $(document).ready(function() {
         sortBy: 'most-recent',
         resolution: 'standard_resolution',
         template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 add-animation"><a href="{{link}}" target="_blank"><div class="photo-box"><div class="image-wrap"><img src="{{image}}"></div><div class="description"><div class="caption">{{caption}}</div><span class="date">{{model.created_time}}</span><div class="likes-comments-container"><span class="likes"><span class="glyphicon glyphicon-heart"></span>&nbsp;{{likes}}</span><span class="comments"><span class="glyphicon glyphicon-comment"></span>&nbsp;{{comments}}</span></div></div></div></a></div>',
-        after: convertDates
+        after: instafeedCallback
     });
     feed.run();
 });
@@ -44,12 +44,15 @@ $(window).load(function() {
     animations.initAnimationWaypoints();
 });
 
-// Converts the date timestamps from instafeed to human readable dates.
-function convertDates() {
-    $('.date').each(function() {
+function instafeedCallback() {
+    // Converts the date timestamps from instafeed to human readable dates.
+    $('.photo-box .description .date').each(function() {
         var d = new Date($(this).html() * 1000);
         $(this).html(d.toDateString());
     });
+
+    // Change the columns to show fewer images at smaller screens.
+    $('#instafeed > .col-xs-12').slice(-4).addClass('visible-lg-block').slice(0, 2).addClass('visible-md-block');
 }
 
 /* GOOGLE MAPS */
