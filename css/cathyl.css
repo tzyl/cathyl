@@ -15,7 +15,7 @@ body {
 .navbar,
 .navbar-default .navbar-brand,
 .navbar-default .navbar-social {
-    transition:  padding 300ms linear, font-size 300ms linear, background-color 300ms linear, border linear 300ms;
+    transition:  padding 300ms linear, font-size 300ms linear, background-color 300ms linear;
 }
 
 .navbar-default .navbar-brand,
@@ -37,20 +37,15 @@ body {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > li > a:hover {
-    color: rgba(255, 0, 0, 0.7) !important;
+    color: #c5a47e !important;
     background-color: inherit;
 }
 
 .navbar-transparent {
-    padding: 5px 0;
-    border-bottom: 1px solid transparent;
+    /*padding: 5px 0;
+    border-bottom: 1px solid transparent;*/
     background-color: transparent;
-    font-size: 15px;
-    /*
-    padding-top: 15px;
-    border-bottom: 1px solid transparent;
-    background-color: transparent;
-    */
+    /*font-size: 15px;*/
 }
 
 .navbar-transparent:after {
@@ -58,7 +53,7 @@ body {
     left: 0;
     top: 0;
     width: 100vw;
-    height: 60px;
+    height: 51px;
     z-index: -1;
     content: "";
     opacity: 0.9;
@@ -71,10 +66,11 @@ body {
     font-size: 17px;
 }
 
+/*
 .navbar-default.navbar-transparent .navbar-brand,
 .navbar-default.navbar-transparent .navbar-social {
     font-size: 20px;
-}
+}*/
 
 .navbar-social {
     margin: 0;
@@ -92,6 +88,11 @@ body {
 .one-page {
     min-height: 100vh;
     padding: 50px 0;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
 }
 
 /* COVER PAGE */
@@ -156,10 +157,22 @@ a.scroll-arrow:hover {
 }
 /* END COVER PAGE */
 
-.title {
-    text-align: center;
-    text-transform: uppercase;
+/* GOOGLE MAP */
+#contact-us-map {
+    height: 500px;
+    width: 100%;
 }
+
+.gm-style-iw-container > div > div:first-child {
+  border-top-color: transparent !important;
+}
+
+.gm-style-iw-container > div > div:nth-child(3) {
+  transform: rotate(90deg);
+  left: 0 !important;
+  top: 8px !important;
+}
+/* END GOOGLE MAP */
 
 /* INSTAGRAM CONTAINER */
 .instagram-wrap {
@@ -224,11 +237,6 @@ a.scroll-arrow:hover {
     margin-right: 5px;
 }
 /* END INSTAGRAM CONTAINER */
-
-#contact-us-map {
-    height: 500px;
-    width: 100%;
-}
 
 /* LINE SEPARATOR */
 .separator-container {

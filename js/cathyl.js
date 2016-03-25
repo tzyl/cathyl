@@ -80,8 +80,21 @@ function initMap() {
 function drop() {
     clearMarkers();
     for (var i = 0; i < locations.length; i++) {
-        addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], i * 200);
+        addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], i * 400);
     }
+    window.setTimeout(function() {
+        for (var i = 0; i < locations.length; i++) {
+            infoWindows[i].open(map, markers[i])
+        }
+
+        // Convert first InfoWindow to point out to the right.
+        infoWindows[0].setOptions({pixelOffset: new google.maps.Size(160, 70)})
+        var $map = $('#contact-us-map');
+        if ($map.find('.gm-style-iw-container').length === 0) {
+            $map.find('.gm-style-iw:first') .parent().addClass('gm-style-iw-container');
+        }
+    }, locations.length * 400)
+
 };
 
 function addMarkerWithTimeout(title, position, content, timeout) {
@@ -93,11 +106,12 @@ function addMarkerWithTimeout(title, position, content, timeout) {
         });
 
         var infoWindow = new google.maps.InfoWindow({
-            content: content
+            content: content,
+            //pixelOffset: new google.maps.Size(left, top)
         });
 
         marker.setMap(map);
-        infoWindow.open(map, marker);
+        //infoWindow.open(map, marker);
         markers.push(marker);
         infoWindows.push(infoWindow);
     }, timeout)
