@@ -67,7 +67,7 @@ var locations = [
 
 // Initialize Google Map.
 function initMap() {
-    var london = new google.maps.LatLng(51.53381403243089, -0.08948728535153272);
+    var london = new google.maps.LatLng(51.52276881137663, -0.08948728535153272);
     var mapOptions = {
         center: london,
         zoom: 12,

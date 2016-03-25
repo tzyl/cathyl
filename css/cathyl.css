@@ -95,6 +95,22 @@ body {
     text-transform: uppercase;
 }
 
+.table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
+    border: none;
+}
+
+.centered {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+
 /* COVER PAGE */
 .cover {
     width: 100%;
@@ -157,6 +173,14 @@ a.scroll-arrow:hover {
 }
 /* END COVER PAGE */
 
+
+
+/* CLASSES PAGE */
+#section3 h2 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
 /* GOOGLE MAP */
 #contact-us-map {
     height: 500px;
@@ -173,6 +197,8 @@ a.scroll-arrow:hover {
   top: 8px !important;
 }
 /* END GOOGLE MAP */
+/* END CLASSES PAGE */
+
 
 /* INSTAGRAM CONTAINER */
 .instagram-wrap {
