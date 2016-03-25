@@ -67,7 +67,7 @@ var locations = [
 
 // Initialize Google Map.
 function initMap() {
-    var london = new google.maps.LatLng(51.50735, -0.12776);
+    var london = new google.maps.LatLng(51.53381403243089, -0.08948728535153272);
     var mapOptions = {
         center: london,
         zoom: 12,
@@ -77,11 +77,17 @@ function initMap() {
     map = new google.maps.Map(document.getElementById('contact-us-map'), mapOptions);
 }
 
+function center() {
+    return map.getCenter();
+}
+
 function drop() {
     clearMarkers();
+
     for (var i = 0; i < locations.length; i++) {
         addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], i * 400);
     }
+
     window.setTimeout(function() {
         for (var i = 0; i < locations.length; i++) {
             infoWindows[i].open(map, markers[i])
@@ -111,6 +117,9 @@ function addMarkerWithTimeout(title, position, content, timeout) {
         });
 
         marker.setMap(map);
+        marker.addListener('click', function() {
+            infoWindow.open(map, marker);
+        });
         //infoWindow.open(map, marker);
         markers.push(marker);
         infoWindows.push(infoWindow);
