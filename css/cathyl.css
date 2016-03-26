@@ -76,6 +76,12 @@ body {
     }
 }
 
+@media (max-width: 767px) {
+    .navbar-default.navbar-transparent .navbar-collapse {
+        background-color: black;
+    }
+}
+
 /* GENERAL */
 .one-page {
     position: relative;
