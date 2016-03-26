@@ -81,9 +81,9 @@ function drop() {
 
     for (var i = 0; i < locations.length; i++) {
         if (i == 0) {
-            addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], i * 400, horizontal=true);
+            addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], true, i * 400);
         } else {
-            addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], i * 400);
+            addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], false, i * 400);
         }
     }
 
@@ -103,7 +103,7 @@ function drop() {
 
 };
 
-function addMarkerWithTimeout(title, position, content, timeout, horizontal=false) {
+function addMarkerWithTimeout(title, position, content, horizontal, timeout) {
     window.setTimeout(function() {
         var marker = new google.maps.Marker({
             title: title,
