@@ -7,7 +7,7 @@ $(document).ready(function() {
         e.preventDefault();
         var hash = this.hash;
 
-        $('html, body').stop().animate({scrollTop: $(hash).offset().top}, 1000);
+        $('html, body').stop().animate({scrollTop: $(hash).offset().top - 25}, 1000);
     });
 
     // Initialize parallax for cover page.
@@ -28,7 +28,7 @@ $(document).ready(function() {
         limit: 8,
         sortBy: 'most-recent',
         resolution: 'standard_resolution',
-        template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 add-animation"><a href="{{link}}" target="_blank"><div class="photo-box"><div class="image-wrap"><img src="{{image}}"></div><div class="description"><div class="caption">{{caption}}</div><span class="date">{{model.created_time}}</span><div class="likes-comments-container"><span class="likes"><span class="glyphicon glyphicon-heart"></span>&nbsp;{{likes}}</span><span class="comments"><span class="glyphicon glyphicon-comment"></span>&nbsp;{{comments}}</span></div></div></div></a></div>',
+        template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 add-animation"><a href="{{link}}" target="_blank"><div class="photo-box"><div class="image-wrap"><img src="{{image}}"></div><div class="description"><div class="caption">{{caption}}</div><span class="date">{{model.created_time}}</span><div class="likes-comments-container"><span class="likes"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp;{{likes}}</span><span class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;{{comments}}</span></div></div></div></a></div>',
         after: instafeedCallback
     });
     feed.run();
@@ -60,14 +60,14 @@ var map;
 var markers = [];
 var infoWindows = [];
 var locations = [
-    ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}, 'Tuesday 18:30 - 19:30 (advanced)'],
-    ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}, 'Wednesday 19:00 - 19:45 (all levels)'],
-    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}, 'Thursday 18:45 - 19:45 (all levels)']
+    ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}, '<div><b>Imperial College London - South Kensington Campus</b><br>Tuesday 18:30 - 19:30 (advanced)</div>'],
+    ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}, '<div><b>Gymbox Westfield Stratford</b><br>Wednesday 19:00 - 19:45 (all levels)</div>'],
+    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}, '<div><b>Imperial College London - St Mary\'s Campus</b><br>Thursday 18:45 - 19:45 (all levels)</div>']
 ];
 
 // Initialize Google Map.
 function initMap() {
-    var london = new google.maps.LatLng(51.52276881137663, -0.08948728535153272);
+    var london = new google.maps.LatLng(51.52582084706302, -0.08948728535153272);
     var mapOptions = {
         center: london,
         zoom: 12,
@@ -94,7 +94,7 @@ function drop() {
         }
 
         // Convert first InfoWindow to point out to the right.
-        infoWindows[0].setOptions({pixelOffset: new google.maps.Size(160, 70)})
+        infoWindows[0].setOptions({pixelOffset: new google.maps.Size(220, 90)})
         var $map = $('#contact-us-map');
         if ($map.find('.gm-style-iw-container').length === 0) {
             $map.find('.gm-style-iw:first') .parent().addClass('gm-style-iw-container');
