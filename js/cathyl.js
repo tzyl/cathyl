@@ -7,7 +7,7 @@ $(document).ready(function() {
         e.preventDefault();
         var hash = this.hash;
 
-        $('html, body').stop().animate({scrollTop: $(hash).offset().top - 25}, 1000);
+        $('html, body').stop().animate({scrollTop: $(hash).offset().top}, 1000);
     });
 
     // Initialize parallax for cover page.

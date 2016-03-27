@@ -86,7 +86,7 @@ body {
 .one-page {
     position: relative;
     min-height: 100vh;
-    padding: 25px 0;
+    padding-top: 50px;
 }
 
 .title {
