@@ -208,24 +208,16 @@
             <footer><span>Cathy L Yoga 2016</span></footer>
         </section>
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <!-- CDN scripts -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <!-- jQuery local fallback -->
-        <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
-
-        <!-- Bootstrap CDN JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <!-- Bootstrap JS local fallback -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+
+        <!-- Local fallbacks -->
+        <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+        <script>window.jQuery.Velocity || document.write('<script src="js/velocity.min.js"><\/script>')</script>
         <script>if(typeof($.fn.modal) === 'undefined') {document.write('<script src="js/bootstrap.min.js"><\/script>')}</script>
-        <!-- Bootstrap CSS local fallback -->
-        <script>
-            $(document).ready(function() {
-                var bodyColor = $('body').css('color');
-                if(bodyColor != 'rgb(51, 51, 51)') {
-                    $("head").prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
-                }
-            });
-        </script>
+        <script>$(document).ready(function(){var e=$("body").css("color");"rgb(51, 51, 51)"!=e&&$("head").prepend('<link rel="stylesheet" href="css/bootstrap.min.css">')});</script>
 
         <!-- Custom JS -->
         <script src="js/cathyl.js"></script>
