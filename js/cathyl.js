@@ -19,12 +19,13 @@ $(document).ready(function() {
 
     // Set up instafeed.
     var feed = new Instafeed({
-        //clientId: '97ae5f4c024c4a91804f959f43f2635f',
-        accessToken: '1011689.59d140c.ecff7995981f4b529358c18fbaec8abc',
+        // clientId: '97ae5f4c024c4a91804f959f43f2635f',
+        // accessToken: '1011689.59d140c.ecff7995981f4b529358c18fbaec8abc',
+        accessToken: '191438231.63adf44.d95e0c98f8134d67ac5952705ca94a41',
         target: 'instafeed',
         get: 'user',
         userId: '191438231',
-        //tagName: 'photographyportfolio',
+        // tagName: 'photographyportfolio',
         links: true,
         limit: 8,
         sortBy: 'most-recent',
