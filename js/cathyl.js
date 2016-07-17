@@ -163,7 +163,7 @@ function initAnimationWaypoints() {
 
     // Navbar animation.
     var waypoint = new Waypoint({
-        element: document.getElementById('section1'),
+        element: document.getElementById('home'),
         handler: function(direction) {
             //console.log(this.element.id + ' triggers at ' + this.triggerPoint);
             if (direction == 'down') {
