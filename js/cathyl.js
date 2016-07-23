@@ -12,7 +12,7 @@ $(document).ready(function() {
     });
 
     // Initialize parallax for cover page.
-    $('.cover').parallax({imageSrc: 'images/carousel-3.jpg', speed: 0.5});
+    $('.cover').parallax({imageSrc: 'images/cover.jpg', speed: 0.5});
 
     // Initialize animations so they can start on elements before page fully loaded.
     initAnimationWaypoints();
