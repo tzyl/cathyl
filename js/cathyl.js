@@ -30,7 +30,7 @@ $(document).ready(function() {
         limit: 8,
         sortBy: 'most-recent',
         resolution: 'low_resolution',
-        template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 add-animation"><a href="{{link}}" target="_blank"><div class="photo-box"><div class="image-wrap"><img src="{{image}}"></div><div class="description"><div class="caption">{{caption}}</div><span class="date">{{model.created_time}}</span><div class="likes-comments-container"><span class="likes"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp;{{likes}}</span><span class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;{{comments}}</span></div></div></div></a></div>',
+        template: '<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 add-animation"><div class="photo-box"><a href="{{link}}" target="_blank"><div class="image-wrap"><img src="{{image}}"></div><div class="description"><div class="caption">{{caption}}</div><span class="date">{{model.created_time}}</span><div class="likes-comments-container"><span class="likes"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp;{{likes}}</span><span class="comments"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;{{comments}}</span></div></div></a></div></div>',
         after: instafeedCallback
     });
     feed.run();
@@ -67,7 +67,7 @@ function initMap() {
     var london = new google.maps.LatLng(51.52582084706302, -0.08948728535153272);
     var mapOptions = {
         center: london,
-        zoom: 12,
+        zoom: 11,
         scrollwheel: false
     };
 

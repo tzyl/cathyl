@@ -2,6 +2,66 @@ body {
     font: 300 18px "Roboto Condensed", sans-serif;
 }
 
+/* GENERAL */
+.one-page {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.title {
+    margin: 60px 0 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.no-title {
+    margin-top: 172px;
+}
+
+.img-column {
+    margin-top: 120px;
+}
+
+@media (min-width: 992px) {
+    .text-column {
+        padding-left: 40px;
+    }
+}
+
+.text-column p {
+    margin-bottom: 18px;
+}
+
+.table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
+    border: none;
+}
+
+.centered {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 992px) {
+    .row-md-flex-center {
+        display:flex;
+        align-items:center;
+    }
+}
+
+@media (max-width: 991px) {
+    [class*="col-"] {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+}
+
+.margin-wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
 /* NAVBAR */
 .navbar {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -82,47 +142,6 @@ body {
     }
 }
 
-/* GENERAL */
-.one-page {
-    position: relative;
-    min-height: 100vh;
-    padding-top: 50px;
-}
-
-.title {
-    text-align: center;
-    text-transform: uppercase;
-}
-
-.table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
-    border: none;
-}
-
-.centered {
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@media (min-width: 992px) {
-    .row-md-flex-center {
-        display:flex;
-        align-items:center;
-    }
-}
-
-@media (max-width: 991px) {
-    [class*="col-"] {
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
-}
-
-.margin-wrapper {
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
-
 /* COVER PAGE */
 .cover {
     width: 100%;
@@ -185,15 +204,21 @@ a.scroll-arrow:hover {
 }
 
 /* ABOUT PAGE */
-.profile-img {
-    margin-top: 25px;
-}
 
 /* CLASSES PAGE */
+.class-list {
+    list-style: none;
+    padding: 0;
+}
+
+.class-list li:first-of-type {
+    font-weight: bold;
+    margin: 15px 0 5px 0;
+}
 
 /* GOOGLE MAP */
 #contact-us-map {
-    height: 500px;
+    height: 450px;
     width: 100%;
 }
 
@@ -223,19 +248,22 @@ a.scroll-arrow:hover {
     color: #bbbbbb;
 }
 .instagram-content .photo-box {
-    margin: 0 0 30px 0;
+    margin: 0 auto 30px auto;
+    max-width: 320px
 }
 
-.instagram-content .photo-box:hover {
-    position: relative;
-    z-index: 2;
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    -webkit-box-shadow: 0 2px 14px rgba(66, 66, 66, 0.2);
-    box-shadow: 0 2px 14px rgba(66, 66, 66, 0.2);
-    -webkit-transition: transform 100ms linear;
-    transition: transform 100ms linear;
+@media (min-width: 768px) {
+    .instagram-content .photo-box:hover {
+        position: relative;
+        z-index: 2;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-box-shadow: 0 2px 14px rgba(66, 66, 66, 0.2);
+        box-shadow: 0 2px 14px rgba(66, 66, 66, 0.2);
+        -webkit-transition: transform 100ms linear;
+        transition: transform 100ms linear;
+    }
 }
 
 .instagram-content .photo-box .image-wrap {
@@ -276,13 +304,54 @@ a.scroll-arrow:hover {
     padding-bottom: 85px
 }
 
+/*.contact-list {
+    font-size: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.contact-list > li .social-button-a,
+.contact-list > li label {
+    color: black;
+    display: inline-block;
+    width: 45px;
+    margin: 0;
+}
+
+.contact-list li {
+    padding: 4px;
+}
+
+.contact-list li.leave-message {
+    padding-top: 68px;
+    font-weight: bold;
+}*/
+
 .contact-table {
-    font-size: 24px;
-    padding-bottom: 20px;
+    font-size: 20px;
 }
 
 .contact-table .social-button-a {
     color: black;
+}
+
+.contact-table.table > tbody > tr > td {
+    padding: 4px;
+}
+
+.contact-table.table > tbody > tr.leave-message-row > td {
+    padding-top: 76px;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) {
+    .leave-message-form {
+        padding-left: 41px;
+    }
+}
+
+.leave-message-form label {
+    font-weight: 300;
 }
 
 footer {
@@ -292,10 +361,11 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 30px;
+    padding: 0 15px 0 15px;
     background-color: black;
     color: white;
-    font-size: 13px;
+    font-size: 12px;
     letter-spacing: 2px;
     text-align: center;
     text-transform: uppercase;
