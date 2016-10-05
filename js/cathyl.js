@@ -56,15 +56,19 @@ function instafeedCallback() {
 /* GOOGLE MAPS */
 var map;
 var markers = [];
-var infoWindows = [];
+var infoWindow;
+// var infoWindows = [];
 var locations = [
-    ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}, '<div class="gm-horizontal"><b>Imperial College London - South Kensington Campus</b><br>Tuesday 18:30 - 19:30 (advanced)</div>'],
+    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}, '<div><b>Imperial College London - St Mary\'s Campus</b><br>Thursday 18:45 - 19:45 (all levels)</div>'],
+    ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}, '<div><b>Imperial College London - South Kensington Campus</b><br>Tuesday 18:30 - 19:30 (advanced)</div>'],
     ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}, '<div><b>Gymbox Westfield Stratford</b><br>Wednesday 19:00 - 19:45 (all levels)</div>'],
-    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}, '<div><b>Imperial College London - St Mary\'s Campus</b><br>Thursday 18:45 - 19:45 (all levels)</div>']
+    ['King\'s College London', {lat: 51.4979351, lng: -0.0915826}, '<div><b>King\'s College London</b><br>Tuesday 07:30 - 08:30 (all levels)</div>'],
+    ['King\'s College London', {lat: 51.5046914, lng: -0.0898922}, '<div><b>King\'s College London</b><br>Tuesday 12:00 - 13:00 (all levels)</div>']
 ];
 
 function initMap() {
-    var london = new google.maps.LatLng(51.52582084706302, -0.08948728535153272);
+    // var london = new google.maps.LatLng(51.52582084706302, -0.08948728535153272);
+    var london = new google.maps.LatLng(51.51930945594464, -0.1157197);
     var mapOptions = {
         center: london,
         zoom: 11,
@@ -72,6 +76,7 @@ function initMap() {
     };
 
     map = new google.maps.Map(document.getElementById('contact-us-map'), mapOptions);
+    infoWindow = new google.maps.InfoWindow();
 }
 
 function getMapCenter() {
@@ -82,30 +87,61 @@ function drop() {
     clearMarkers();
 
     for (var i = 0; i < locations.length; i++) {
-        if (i == 0) {
-            addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], true, i * 400);
-        } else {
-            addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], false, i * 400);
-        }
+        addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], i*400);
     }
 
     window.setTimeout(function() {
-        // Open the InfoWindows at the end of the marker drop animations.
-        for (var i = 0; i < locations.length; i++) {
-            google.maps.event.trigger(markers[i], 'click');
-        }
-
-        // Convert first InfoWindow to point out to the right.
-        infoWindows[0].setOptions({pixelOffset: new google.maps.Size(220, 90)})
-        var $map = $('#contact-us-map');
-        if ($map.find('.gm-style-iw-container').length === 0) {
-            $map.find('.gm-style-iw:first') .parent().addClass('gm-style-iw-container');
-        }
+        google.maps.event.trigger(markers[0], 'click');
     }, locations.length * 400)
+}
 
+// function dropHorizontal() {
+//     clearMarkers();
+
+//     for (var i = 0; i < locations.length; i++) {
+//         if (i == 0) {
+//             addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], true, i * 400);
+//         } else {
+//             addMarkerWithTimeout(locations[i][0], locations[i][1], locations[i][2], false, i * 400);
+//         }
+//     }
+
+//     window.setTimeout(function() {
+//         // Open the InfoWindows at the end of the marker drop animations.
+//         for (var i = 0; i < locations.length; i++) {
+//             google.maps.event.trigger(markers[i], 'click');
+//         }
+
+//         // Convert first InfoWindow to point out to the right.
+//         infoWindows[0].setOptions({pixelOffset: new google.maps.Size(220, 90)})
+//         var $map = $('#contact-us-map');
+//         if ($map.find('.gm-style-iw-container').length === 0) {
+//             $map.find('.gm-style-iw:first') .parent().addClass('gm-style-iw-container');
+//         }
+//     }, locations.length * 400)
+
+// };
+
+function addMarkerWithTimeout(title, position, content, timeout) {
+    window.setTimeout(function() {
+        var marker = new google.maps.Marker({
+            title: title,
+            position: position,
+            animation: google.maps.Animation.DROP,
+        });
+
+        marker.setMap(map);
+        marker.addListener('click', function() {
+            infoWindow.setContent(content);
+            infoWindow.open(map, marker);
+        });
+
+        markers.push(marker);
+        infoWindows.push(infoWindow);
+    }, timeout)
 };
 
-function addMarkerWithTimeout(title, position, content, horizontal, timeout) {
+function addMarkerWithTimeoutHorizontal(title, position, content, horizontal, timeout) {
     window.setTimeout(function() {
         var marker = new google.maps.Marker({
             title: title,

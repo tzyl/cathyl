@@ -206,7 +206,7 @@ a.scroll-arrow:hover {
 /* ABOUT PAGE */
 
 /* CLASSES PAGE */
-.class-list {
+/*.class-list {
     list-style: none;
     padding: 0;
 }
@@ -214,7 +214,21 @@ a.scroll-arrow:hover {
 .class-list li:first-of-type {
     font-weight: bold;
     margin: 15px 0 5px 0;
+}*/
+
+.class-list .class-day {
+    font-weight: bold;
+    margin: 15px 0 5px 0;
 }
+
+.class-list .class-details {
+    margin-bottom: 15px;
+}
+
+.class-list .class-details p {
+    margin: 0;
+}
+
 
 /* GOOGLE MAP */
 #contact-us-map {
