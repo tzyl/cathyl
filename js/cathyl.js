@@ -68,10 +68,10 @@ var locations = [
 
 function initMap() {
     // var london = new google.maps.LatLng(51.52582084706302, -0.08948728535153272);
-    var london = new google.maps.LatLng(51.51930945594464, -0.1157197);
+    var london = new google.maps.LatLng(51.50648967955005, -0.12809097353514431);
     var mapOptions = {
         center: london,
-        zoom: 11,
+        zoom: 12,
         scrollwheel: false
     };
 
