@@ -63,12 +63,14 @@ var locations = [
     ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}, '<div><b>Imperial College London - South Kensington Campus</b><br>Tuesday 18:30 - 19:30 (advanced)</div>'],
     // ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}, '<div><b>Gymbox Westfield Stratford</b><br>Wednesday 19:00 - 19:45 (all levels)</div>'],
     ['King\'s College London', {lat: 51.4979351, lng: -0.0915826}, '<div><b>King\'s College London</b><br>Tuesday 07:30 - 08:30 (all levels)</div>'],
-    ['King\'s College London', {lat: 51.5046914, lng: -0.0898922}, '<div><b>King\'s College London</b><br>Tuesday 12:00 - 13:00 (all levels)</div>']
+    ['King\'s College London', {lat: 51.5046914, lng: -0.0898922}, '<div><b>King\'s College London</b><br>Tuesday 12:00 - 13:00 (all levels)</div>'],
+    ['Arch Climbing Wall (Yoga Mezzanie @Biscuit)', {lat: 51.494561, lng: -0.062203}, '<div><b>Arch Climbing Wall (Yoga Mezzanie @Biscuit)</b><br>18:45 - 19:45 (all levels)</div>']
 ];
 
 function initMap() {
     // var london = new google.maps.LatLng(51.52582084706302, -0.08948728535153272);
-    var london = new google.maps.LatLng(51.50648967955005, -0.12809097353514431);
+    // var london = new google.maps.LatLng(51.50648967955005, -0.12809097353514431);
+    var london = new google.maps.LatLng(51.50764083752618, -0.11293627407216622);
     var mapOptions = {
         center: london,
         zoom: 12,
