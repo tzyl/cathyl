@@ -64,7 +64,7 @@ var locations = [
     // ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}, '<div><b>Gymbox Westfield Stratford</b><br>Wednesday 19:00 - 19:45 (all levels)</div>'],
     ['King\'s College London', {lat: 51.4979351, lng: -0.0915826}, '<div><b>King\'s College London</b><br>Tuesday 07:30 - 08:30 (all levels)</div>'],
     ['King\'s College London', {lat: 51.5046914, lng: -0.0898922}, '<div><b>King\'s College London</b><br>Tuesday 12:00 - 13:00 (all levels)</div>'],
-    ['Arch Climbing Wall (Yoga Mezzanie @Biscuit)', {lat: 51.494561, lng: -0.062203}, '<div><b>Arch Climbing Wall (Yoga Mezzanie @Biscuit)</b><br>18:45 - 19:45 (all levels)</div>']
+    ['Arch Climbing Wall (Yoga Mezzanine @Biscuit)', {lat: 51.494561, lng: -0.062203}, '<div><b>Arch Climbing Wall (Yoga Mezzanine @Biscuit)</b><br>18:45 - 19:45 (all levels)</div>']
 ];
 
 function initMap() {
