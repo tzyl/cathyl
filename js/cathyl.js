@@ -59,12 +59,12 @@ var markers = [];
 var infoWindow;
 // var infoWindows = [];
 var locations = [
-    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}, '<div><b>Imperial College London - St Mary\'s Campus</b><br>Thursday 18:45 - 19:45 (all levels)</div>'],
+    ['King\'s College London', {lat: 51.5046914, lng: -0.0898922}, '<div><b>King\'s College London</b><br>Tuesday + Thursday 12:00 - 13:00 (all levels)</div>'],
     ['Imperial College London - South Kensington Campus', {lat: 51.4987997, lng: -0.1761291}, '<div><b>Imperial College London - South Kensington Campus</b><br>Tuesday 18:30 - 19:30 (advanced)</div>'],
+    ['Imperial College London - St Mary\'s Campus', {lat: 51.517158, lng: -0.1748028}, '<div><b>Imperial College London - St Mary\'s Campus</b><br>Thursday 18:45 - 19:45 (all levels)</div>'],
     // ['Gymbox Westfield Stratford', {lat: 51.5429803, lng: -0.0095808}, '<div><b>Gymbox Westfield Stratford</b><br>Wednesday 19:00 - 19:45 (all levels)</div>'],
-    ['King\'s College London', {lat: 51.4979351, lng: -0.0915826}, '<div><b>King\'s College London</b><br>Tuesday 07:30 - 08:30 (all levels)</div>'],
-    ['King\'s College London', {lat: 51.5046914, lng: -0.0898922}, '<div><b>King\'s College London</b><br>Tuesday 12:00 - 13:00 (all levels)</div>'],
-    ['Arch Climbing Wall (Yoga Mezzanine @Biscuit)', {lat: 51.494561, lng: -0.062203}, '<div><b>Arch Climbing Wall (Yoga Mezzanine @Biscuit)</b><br>18:45 - 19:45 (all levels)</div>']
+    // ['King\'s College London', {lat: 51.4979351, lng: -0.0915826}, '<div><b>King\'s College London</b><br>Tuesday 07:30 - 08:30 (all levels)</div>'],
+    // ['Arch Climbing Wall (Yoga Mezzanine @Biscuit)', {lat: 51.494561, lng: -0.062203}, '<div><b>Arch Climbing Wall (Yoga Mezzanine @Biscuit)</b><br>18:45 - 19:45 (all levels)</div>']
 ];
 
 function initMap() {
@@ -93,7 +93,7 @@ function drop() {
     }
 
     window.setTimeout(function() {
-        google.maps.event.trigger(markers[0], 'click');
+        google.maps.event.trigger(markers[markers.length - 1], 'click');
     }, locations.length * 400)
 }
 
